@@ -39,3 +39,6 @@ form input{
 .auth{
   margin-top: 3%;
 }
+.proj-btns li{
+  display: inline-block;
+}
