@@ -1,68 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Galeria</title>
-</head>
-<body>
-  
-</body>
-</html><!--Main Navigation-->
-<header>
 
-  <nav class="navbar fixed-top navbar-expand-lg scrolling-navbar">
-    <a class="navbar-brand" href="{% url 'galeria' %}"><strong>Home</strong></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="{% url 'gallery' %}">Gallery <span class="sr-only">(current)</span></a>
-        </li>
+<nav class="navbar sticky-top navbar-expand-lg">
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+      <a class="navbar-brand mr-auto" href="" id="home"><img src="https://images.vexels.com/media/users/3/134803/isolated/preview/dc835f4dbe0dc396f68307d6c593a1d7-star-cartoon-icon-by-vexels.png" width="30"> <strong>P-rates</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  </div> 
+  <div class="mx-auto order-0">
+      <form class="form-inline mx-auto" role="search" action="">
+          <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search User" aria-label="Search" name="search">
+          </div>
+      </form>
+  </div>        
+  <div class="collapse navbar-collapse w-100 order-3 dual-collapse2" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        {% if user.is_authenticated%}
         
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle mr-auto" id="navbarDropdownMenuLink" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">Category</a>
-              <div class="dropdown-menu" aria-labelledby="category">
-                  <a class="dropdown-item" href="#">Office_wear</a>
-                  <a class="dropdown-item" href="#">Casual_wear</a>
-                  <a class="dropdown-item" href="#">Kids_fashion</a>
-              </div>            
-
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle mr-auto" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Location</a>
-                <div class="dropdown-menu" aria-labelledby="category">
-                    <a class="dropdown-item" href="/location/Nairobi">Nairobi</a>
-                    <a class="dropdown-item" href="/location/Accra">Accra</a>
-                    <a class="dropdown-item" href="/location/New_York">New York</a>
-                    <a class="dropdown-item" href="/location/Paris">Paris</a>
-                    <a class="dropdown-item" href="/location/Alaska">Alaska</a>
-                </div>            
-  
+          <li class="nav-item">
+              <a class="nav-link waves-effect waves-light" href="/" id="out">Logout</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link waves-effect waves-light" href=""><img src="https://img.icons8.com/material-rounded/24/000000/user.png" width="30"></a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+              <a class='btn btn-default' href="/accounts/login" id="in">Login</a>
+          </li>
+          
+          <li class="nav-item">
+              <a class="nav-link waves-effect waves-light" href="/accounts/register/" id="signup">Register</a>
+          </li>
+          {% endif %}         
+          
       </ul>
-  
-       <!-- Adding a search form -->
-       <div class="col-sm-4 col-md-4 navbar-right">
-          <form class="navbar-form" role="search" action="{% url 'search_images' %}">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search by Category" name="category">
-              <div class="input-group-btn">
-                <button class="btn btn-search" type="submit"><i class="fa fa-search"></i></button>
-              </div>
-            </div>
-          </form>
-        </div>
-        <!--search form end-->
-      
     </div>
-  </nav>
-
-</header>
-<!--Main Navigation-->
+       
+</nav>
