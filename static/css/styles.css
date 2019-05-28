@@ -1,13 +1,41 @@
 body{
-  background-image: url('/images/bg.jpeg');
+  background-image: url('../images/bg.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   /* font-family: 'Fredoka One', cursive; */
   font-family: 'Patrick Hand', cursive;
+  font-size: 1.5em;
 }
 #signup,#in,#home{
   text-decoration: none;
-  color: black;
-  font-size: 2.5em;
+  color: aliceblue;
+}
+form input{
+  color: aliceblue !important;
 }
 .navbar{
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Fredoka One', cursive;  
+}
+.page-footer{
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+}
+#header{
+  height:550px;
+  background-image: url('../images/win.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+.md-form{
+  display: inline-block;
+}
+.auth{
+  margin-top: 3%;
 }
