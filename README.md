@@ -2,7 +2,7 @@
 #### This is a web platform for the masters of web developers to be identified and be rated. Both web designers and developers interact and get to showcase their work to their peers. May 29, 2019.
 #### By Aisa Jemila
 ## Description
-Deployed to: https://i-gram.herokuapp.com
+Deployed to: https://p-rates.herokuapp.com/
 This is a web platform for web developers to showcase their work and rate each other's project based on the design,usability and content. To participate, users and required to have an account and logged in. For users who create account's with P-rates get to have and edit their profile, add projects done and rate other projects show cased.
 ## App
 ![Landing Page](/static/images/landing-page.png)
