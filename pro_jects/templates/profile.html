@@ -15,23 +15,58 @@
         <div class="col-md-2"></div>
         <div class="col-md-8">
           <div class="row">
-            <a href="{% url 'newProfile'%}"><button class="btn btn-default">Edit Profile</button></a>
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <a href="{% url 'newProfile'%}"><button class="btn btn-default">Edit Profile</button></a>
+            </div>  
+            <div class="col-md-1"></div>          
           </div>
           <div class="row profile-sec">            
-            {% for profile in profiles %}
-            <div id="p-image">
-              <img src="{{profile.prof_pic.url}}" class="img-fluid">
-            </div>  
-            <div id="details">
+            
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
               
-            </div>         
-            {% endfor %}
+              <div >
+                {% for profile in profiles %}
+                <img src="{{profile.prof_pic.url}}" id="p-image" class="img-fluid rounded-circle">
+                {% endfor %}
+              </div>  
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4"> 
+              <div id="details" class="text-center" >
+                {% for profile in profiles %}
+                <h3>{{profile.name}}</h3>
+                <p>Contact: {{profile.contact}}</p>
+                <h4 style="text-decoration:underline">Bio</h4>
+                <p>{{profile.bio}}</p>
+                {% endfor %}
+              </div>  
+              
+            </div>            
+            <div class="col-md-1"></div>       
+            
           </div>
         </div>
         <div class="col-md-2"></div>
       </div>
+      <div class="row user-projects">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            <a href="{% url 'newProject' %}"><button class="btn btn-default">Add Project</button></a>
+          </div>
+          <div class="col-md-1"></div>          
+        </div>
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            
+          <div class="col-md-1"></div> 
+        </div>
+      </div>
     </div>
-    
+    </div>
   </body>
   </html>
 {% endblock %}
