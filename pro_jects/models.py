@@ -26,6 +26,7 @@ class Profile(models.Model):
   bio=models.TextField()
   user=models.ForeignKey(User,on_delete=models.CASCADE)
   contact=models.IntegerField()
+  name=models.CharField(max_length=60)
 
   def __str__(self):
     return self.contact

@@ -18,12 +18,13 @@ form input{
   font-family: 'Fredoka One', cursive;  
 }
 .page-footer{
-  position: relative;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   color: black;
   text-align: center;
+  
 }
 #header{
   height:550px;
@@ -65,10 +66,14 @@ form input{
   background-size: cover;
   background-position: center;
   border: 1px solid cyan;
-  height: 150px;
-  width: 150px;
+  height: 250px;
+  width: 250px;
 }
 #p-icon,#f-search{
   background-color: aliceblue;
   background-blend-mode:lighten;
+}
+#details{
+  background-color: rgb(224,255,255);
+  color: black;
 }
