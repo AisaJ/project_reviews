@@ -37,14 +37,22 @@
                   <a href="{{project.link}}" target="_blank" class="btn btn-default">View Site</a>                  
                 </div>
                 <div class="card-footer">
-                  <p>Site by -<cite>{{project.user.username}}</cite>-</p>
+                  <p>Site by -<cite>{{project.user.username}}</cite>- More Details</p>
                   {% for profile in profiles%}
                   <p>Contact:<strong> {{profile.contact}}</strong></p>
                   {% endfor %}
                   <span class="rating">
                     <p class="text-center"><b>Ratings <img src="/static/images/Actions-rating-icon.png" width="35"></b></p>
                     <ul>
-                      <p>Design <button class="btn btn-outline-info rate-score">0</button></p>
+                      <p>Design <button class="btn btn-outline-info rate-score">0</button>
+                        <div class="stars" data-rating="3">
+                            <span class="star">&nbsp;</span>
+                            <span class="star">&nbsp;</span>
+                            <span class="star">&nbsp;</span>
+                            <span class="star">&nbsp;</span>
+                            <span class="star">&nbsp;</span>
+                        </div>
+                      </p>
                       <p>Usabiliy <button class="btn btn-outline-info rate-score">0</button></p>
                       <p>Content <button class="btn btn-outline-info rate-score">0</button></p>
                     </ul>
