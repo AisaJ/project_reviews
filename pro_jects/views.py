@@ -11,12 +11,12 @@ def home(request):
 
 @login_required(login_url='/accounts/login')
 def new_profile(request):
-  current_user=request.current_user
+  current_user=request.user
   if request.method == 'POST':
     form=NewProfileForm(request.POST,request.FILES)
     if form.is_valid():
       profile = form.save(commit=False)
-      profile.user = current_user7
+      profile.user = current_user
       prof_pic=form.cleaned_data['prof_pic']
       bio=form.cleaned_data['bio']
       contact = form.cleaned_data['contact']
@@ -30,3 +30,15 @@ def new_profile(request):
 
 @login_required(login_url='/accounts/login')
 def project_add(request):
+  current_user = request.user
+  if request.method == 'POST':
+    form = NewProjectForm(request.POST,request.FILES)
+    if form.is_valid():
+      project = form.save(commit=False)
+      project.user = current_user
+      project.save()
+    return redirect('home')
+
+  else:
+    form=NewProjectForm()
+    return render(request,'project-add.html',{'form':form})
