@@ -36,7 +36,7 @@ form input{
 .md-form{
   display: inline-block;
 }
-.auth,.new-add{
+.auth,.new-add,.user-profile{
   margin-top: 3%;
 }
 .proj-btns li{
@@ -50,8 +50,15 @@ form input{
   color: white;
   font-size: 32px;
   text-align: center;
-  h2{
-    letter-spacing: 1.6px;
-    font-weight: 300;
-  }
+}
+#intro{  
+  letter-spacing: 1.6px;
+  font-weight: 300;  
+}
+#p-image{
+  background-image: url('../images/default-avatar.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid cyan;
 }
