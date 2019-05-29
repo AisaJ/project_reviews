@@ -12,10 +12,10 @@ def home(request):
 
 def profile(request):
   current_user = request.user
-  profile=Profile.objects.filter(user_id=current_user.id)[0:1]
+  profile=Profile.objects.filter(user_id=current_user.id)
   projects = Project.objects.filter(user_id=current_user.id)
 
-  return render(request,'profile.html',{"profiles":profile,"projects":projects})
+  return render(request,'profile.html',{"profile":profile,"projects":projects})
 
 @login_required(login_url='/accounts/login')
 def new_profile(request):

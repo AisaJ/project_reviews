@@ -27,7 +27,7 @@
             <div class="col-md-4">
               
               <div >
-                {% for profile in profiles %}
+                {% for profile in profile %}
                 <img src="{{profile.prof_pic.url}}" id="p-image" class="img-fluid rounded-circle">
                 {% endfor %}
               </div>  
@@ -35,7 +35,7 @@
             <div class="col-md-2"></div>
             <div class="col-md-4"> 
               <div id="details" class="text-center" >
-                {% for profile in profiles %}
+                {% for profile in profile %}
                 <h3>{{profile.name}}</h3>
                 <p>Contact: {{profile.contact}}</p>
                 <h4 style="text-decoration:underline">Bio</h4>
