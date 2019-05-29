@@ -92,4 +92,9 @@ body{
   border: 2px solid whitesmoke;
   margin: 3%;
 }
-
+.rating ul li{
+  text-decoration: none;
+}
+.rate-score{
+  border-radius: 50px;
+}

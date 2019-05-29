@@ -20,7 +20,7 @@
       </div>
     
         <div class="row text-center p-title" id="projects" style="color:whitesmoke">
-          <h2 class="text-center" style="border: 3px solid whitesmoke; padding: 2%">Projects List</h2>
+          <h2 class="text-center" style="border: 3px solid whitesmoke; padding: 2%">Top Rated Sites</h2>
         </div>
         <div class="row">
           
@@ -34,8 +34,21 @@
                 <!-- Card content -->
                 <div class="card-body">        
                   <p class="card-text">{{project.description}}</p>
-                  <a href="{{project.link}}" target="_blank" class="btn btn-default">View Site</a>
-                  <p class="card-footer">Site by -<cite>{{project.user.username}}</cite>-</p>
+                  <a href="{{project.link}}" target="_blank" class="btn btn-default">View Site</a>                  
+                </div>
+                <div class="card-footer">
+                  <p>Site by -<cite>{{project.user.username}}</cite>-</p>
+                  {% for profile in profiles%}
+                  <p>Contact:<strong> {{profile.contact}}</strong></p>
+                  {% endfor %}
+                  <span class="rating">
+                    <p class="text-center"><b>Ratings <img src="/static/images/Actions-rating-icon.png" width="35"></b></p>
+                    <ul>
+                      <p>Design <button class="btn btn-outline-info rate-score">0</button></p>
+                      <p>Usabiliy <button class="btn btn-outline-info rate-score">0</button></p>
+                      <p>Content <button class="btn btn-outline-info rate-score">0</button></p>
+                    </ul>
+                  </span>
                 </div>                                 
               </div>
             </div>

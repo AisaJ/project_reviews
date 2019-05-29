@@ -7,7 +7,8 @@ from .forms import NewProfileForm,NewProjectForm
 
 def home(request):
   projects=Project.objects.all()
-  return render(request,'home.html',{"projects":projects})
+  profiles=Profile.objects.all()
+  return render(request,'home.html',{"projects":projects,"profiles":profiles})
 
 def profile(request):
   current_user = request.user
