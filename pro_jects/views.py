@@ -33,7 +33,7 @@ def new_profile(request):
     return redirect('profile') 
   else:
     form = NewProfileForm()
-  return render(request,'new-profile htm',{"form":form})
+    return render(request,'new-profile.html',{"form":form})
 
 @login_required(login_url='/accounts/login')
 def project_add(request):
