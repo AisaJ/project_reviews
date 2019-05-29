@@ -8,6 +8,7 @@ class Project(models.Model):
   image=models.ImageField(upload_to='projects/',default='tech.jpeg')
   user=models.ForeignKey(User,on_delete=models.CASCADE)
   description=models.TextField()
+  link=models.CharField(max_length=60,default='site.com')
 
   def __str__(self):
     return self.name

@@ -59,11 +59,24 @@
           <div class="col-md-1"></div>          
         </div>
         <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-10">
+          {% for project in projects %}
+          <div class="col-md-6">
             
-          <div class="col-md-1"></div> 
-        </div>
+            <div class="card">
+              <!-- Card image -->             
+              <h4 class="card-title text-center" style="padding:1%;"><a>{{project.name}}</a></h4>
+              <img class="card-img-top" src="{{project.image.url}}" alt="Card image cap">
+            
+              <!-- Card content -->
+              <div class="card-body">        
+                <p class="card-text">{{project.description}}</p>
+                <a href="{{project.link}}" target="_blank" class="btn btn-default">View Site</a>
+              </div> 
+                           
+            </div>
+            
+          </div>
+          {% endfor %}     
       </div>
     </div>
     </div>

@@ -11,9 +11,6 @@ body{
   text-decoration: none;
   color: aliceblue;
 }
-form input{
-  color: aliceblue !important;
-}
 .navbar{
   font-family: 'Fredoka One', cursive;  
 }
@@ -23,8 +20,12 @@ form input{
   bottom: 0;
   width: 100%;
   color: black;
-  text-align: center;
-  
+  text-align: center;  
+}
+.card{
+  background-color: lightcyan;
+  color: black;
+  margin-bottom: 1%;
 }
 #header{
   height:550px;
@@ -78,5 +79,11 @@ form input{
   color: black;
   box-shadow: 2px 3px 3px cyan;
   padding: 2%;
-
 }
+.user-projects{
+  padding: 3%;
+  margin-top: 3%;
+  border: 2px solid whitesmoke;
+  margin: 3%;
+}
+
