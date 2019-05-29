@@ -39,6 +39,9 @@ form input{
 .auth,.new-add,.user-profile{
   margin-top: 3%;
 }
+.new-add{
+  color: white;
+}
 .proj-btns li{
   display: inline-block;
 }
@@ -62,7 +65,10 @@ form input{
   background-size: cover;
   background-position: center;
   border: 1px solid cyan;
+  height: 150px;
+  width: 150px;
 }
 #p-icon,#f-search{
   background-color: aliceblue;
+  background-blend-mode:lighten;
 }
