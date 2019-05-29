@@ -9,6 +9,13 @@ def home(request):
   projects=Project.objects.all()
   return render(request,'home.html',{"projects":projects})
 
+def profile(request):
+  current_user = request.user
+  profile=Profile.objects.filter(user_id=current_user.id)[0:1]
+  projects = Project.objects.filter(user_id=current_user.id)
+
+  return render(request,'profile.html',{"profiles":profile,"projects":projects})
+
 @login_required(login_url='/accounts/login')
 def new_profile(request):
   current_user=request.user

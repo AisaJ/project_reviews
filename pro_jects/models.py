@@ -25,6 +25,7 @@ class Profile(models.Model):
   prof_pic = models.ImageField(upload_to='profile/',default='default-avatar.jpg')
   bio=models.TextField()
   projects=models.ForeignKey(Project,on_delete=models.CASCADE)
+  user=models.ForeignKey(User,on_delete=models.CASCADE)
   contact=models.IntegerField()
 
   def __str__(self):
