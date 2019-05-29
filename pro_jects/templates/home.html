@@ -1,16 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>P-rates</title>
-  </head>
-  <body>
-    <div class="container-fluid">
+
+    <div class="container-fluid " style="">
       <div class="row text-center" id="header">
         <div class="col-md-3"></div>
         <div class="col-md-6">
@@ -26,11 +18,32 @@
         </div>        
         <div class="col-md-3"></div>
       </div>
-      <div class="row" id="projects">
-
+    
+        <div class="row text-center p-title" id="projects" style="color:whitesmoke">
+          <h2 class="text-center" style="border: 3px solid whitesmoke; padding: 2%">Projects List</h2>
+        </div>
+        <div class="row">
+          
+            {%for project in projects%}
+            <div class="col-md-4">
+              <div class="card">
+                <!-- Card image -->             
+                <h4 class="card-title text-center" style="padding:1%;"><a>{{project.name}}</a></h4>
+                <img class="card-img-top img-fluid" src="{{project.image.url}}" alt="Card image cap">
+              
+                <!-- Card content -->
+                <div class="card-body">        
+                  <p class="card-text">{{project.description}}</p>
+                  <a href="{{project.link}}" target="_blank" class="btn btn-default">View Site</a>
+                  <p class="card-footer">Site by -<cite>{{project.user.username}}</cite>-</p>
+                </div>                                 
+              </div>
+            </div>
+            {%endfor%}  
+         
+        
       </div>
     </div>
-  </body>
-  </html>
+ 
 
 {% endblock %}
