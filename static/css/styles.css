@@ -95,7 +95,7 @@ body{
 .rating ul li{
   text-decoration: none;
 }
-.rate-score{
+.rate-score,.data-rating{
   border-radius: 50px;
 }
 .star{
@@ -113,13 +113,20 @@ body{
 }
 
 .stars{
-    counter-reset: rateme 0;   
-    font-size: 2.0rem;
-    font-weight: 900;
+  counter-reset: rateme 0;   
+  font-size: 2.0rem;
+  font-weight: 900;
 }
 .star.rated{
-    counter-increment: rateme 1;
+  counter-increment: rateme 1;
 }
 .stars::after{
-    content: counter(rateme) '/5';
+  content: counter(rateme) '/5';
+}
+.more{
+  display: none;
+}
+.more-click:hover{
+  text-decoration: underline;
+  color: blue;
 }

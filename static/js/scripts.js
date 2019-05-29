@@ -30,6 +30,10 @@ $(document).ready(function(){
   // class of outer div
   // The second paramter is the speed between each letter is typed.   
   autoType(".welcome-type",200);
+
+  $('.more-click').click(function(){
+    $('.more').toggle();
+  });
 });
 
 document.addEventListener('DOMContentLoaded', function(){
