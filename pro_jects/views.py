@@ -6,6 +6,7 @@ from .forms import NewProfileForm,NewProjectForm
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializer import ProfileSerializer,ProjectSerializer
+from rest_framework import status
 # Create your views here.
 
 def home(request):
@@ -60,8 +61,22 @@ class Pro_file(APIView):
     serializers=ProfileSerializer(all_profiles,many=True)
     return Response(serializers.data)
 
+  def post(self, request, format=None):
+    serializers = ProfileSerializer(data=request.data)
+    if serializers.is_valid():
+        serializers.save()
+        return Response(serializers.data, status=status.HTTP_201_CREATED)
+    return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
 class Pro_ject(APIView):
   def get(self,request,format=None):
     projects=Project.objects.all()
     serializers=ProjectSerializer(projects,many=True)
     return Response(serializers.data)
+
+  def post(self, request, format=None):
+    serializers = ProjectSerializer(data=request.data)
+    if serializers.is_valid():
+        serializers.save()
+        return Response(serializers.data, status=status.HTTP_201_CREATED)
+    return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
