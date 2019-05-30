@@ -53,3 +53,15 @@ def project_add(request):
   else:
     form=NewProjectForm()
     return render(request,'project-add.html',{'form':form})
+
+class Profile(APIView):
+  def get(self,request,format=None):
+    all_profiles=Profile.objects.all()
+    serializers=ProfileSerializer(all_profiles,many=True)
+    return Response(serializers.data)
+
+class Project(APIView):
+  def get(self,request,format=None):
+    projects=Project.objects.all()
+    serializers=ProjectSerializer(projects,many=True)
+    return Response(serializers.data)
