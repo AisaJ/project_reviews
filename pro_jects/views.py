@@ -54,13 +54,13 @@ def project_add(request):
     form=NewProjectForm()
     return render(request,'project-add.html',{'form':form})
 
-class Profile(APIView):
+class Pro_file(APIView):
   def get(self,request,format=None):
     all_profiles=Profile.objects.all()
     serializers=ProfileSerializer(all_profiles,many=True)
     return Response(serializers.data)
 
-class Project(APIView):
+class Pro_ject(APIView):
   def get(self,request,format=None):
     projects=Project.objects.all()
     serializers=ProjectSerializer(projects,many=True)
