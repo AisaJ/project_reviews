@@ -3,6 +3,9 @@ from django.http import HttpResponse,Http404
 from django.contrib.auth.decorators import login_required
 from .models import Project,Profile
 from .forms import NewProfileForm,NewProjectForm
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProfileSerializer,ProjectSerializer
 # Create your views here.
 
 def home(request):
